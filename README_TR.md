@@ -25,8 +25,8 @@ import { HipcallClient } from '@hipcall/sdk';
 
 const client = new HipcallClient({
   apiKey: process.env.HIPCALL_API_TOKEN!,
-  // İsteğe bağlı: varsayılan olarak "https://use.hipcall.com.tr" kullanılır
-  baseUrl: 'https://use.hipcall.com.tr',
+  // 'tr' = https://use.hipcall.com.tr, 'global' (varsayılan) = https://use.hipcall.com
+  region: 'tr',
 });
 
 // Son çağrıları listele
@@ -51,6 +51,15 @@ const task = await client.createTask({
 });
 console.log('Oluşturulan görev ID:', task.data.id);
 ```
+
+### Bölgeler
+
+| `region` | Adres |
+| :--- | :--- |
+| `'global'` (varsayılan) | `https://use.hipcall.com` |
+| `'tr'` | `https://use.hipcall.com.tr` |
+
+Varsayılan bölge `global` olduğu için Türkiye hesaplarında `region: 'tr'` verin. `baseUrl` verirseniz `region` yerine o adres kullanılır.
 
 İstemci üzerinde hem `camelCase` (`client.getCalls()`) hem de `snake_case` (`client.get_calls()`) metot isimlendirmeleri desteklenir.
 

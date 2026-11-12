@@ -25,8 +25,8 @@ import { HipcallClient } from '@hipcall/sdk';
 
 const client = new HipcallClient({
   apiKey: process.env.HIPCALL_API_TOKEN!,
-  // Optional: defaults to "https://use.hipcall.com.tr"
-  baseUrl: 'https://use.hipcall.com',
+  // Optional: 'global' (default) = https://use.hipcall.com, 'tr' = https://use.hipcall.com.tr
+  region: 'global',
 });
 
 // List recent calls
@@ -51,6 +51,15 @@ const task = await client.createTask({
 });
 console.log('Created task ID:', task.data.id);
 ```
+
+### Regions
+
+| `region` | Base address |
+| :--- | :--- |
+| `'global'` (default) | `https://use.hipcall.com` |
+| `'tr'` | `https://use.hipcall.com.tr` |
+
+Pass `baseUrl` to use any other address; it overrides `region`.
 
 Both `camelCase` (`client.getCalls()`) and `snake_case` (`client.get_calls()`) method names are supported on the client instance.
 

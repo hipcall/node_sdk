@@ -434,3 +434,15 @@ test("All 104 endpoints (snake_case and camelCase)", async () => {
   assert.match(calls.at(-1).url, /^https:\/\/use\.hipcall\.com\.tr\/api\/v3\//);
   await client.createAttribution({});
 });
+
+test("Region selects the base address", () => {
+  assert.equal(new Client("k").baseUrl, "https://use.hipcall.com");
+  assert.equal(new HipcallClient({ apiKey: "k" }).baseUrl, "https://use.hipcall.com");
+  assert.equal(new HipcallClient({ apiKey: "k", region: "global" }).baseUrl, "https://use.hipcall.com");
+  assert.equal(new HipcallClient({ apiKey: "k", region: "tr" }).baseUrl, "https://use.hipcall.com.tr");
+  assert.equal(
+    new HipcallClient({ apiKey: "k", region: "tr", baseUrl: "https://proxy.example.com/" }).baseUrl,
+    "https://proxy.example.com"
+  );
+  assert.throws(() => new HipcallClient({ apiKey: "k", region: "xx" }), /Invalid region/);
+});

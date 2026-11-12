@@ -1,4 +1,10 @@
-export { DEFAULT_HIPCALL_BASE_ADDRESS } from "./constants.js";
+export {
+  DEFAULT_HIPCALL_BASE_ADDRESS,
+  DEFAULT_HIPCALL_REGION,
+  HIPCALL_BASE_ADDRESSES,
+  resolveBaseAddress,
+  type HipcallRegion,
+} from "./constants.js";
 export {
   HipcallAPIException,
   BadRequestException,

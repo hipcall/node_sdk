@@ -1,4 +1,4 @@
-import { DEFAULT_HIPCALL_BASE_ADDRESS } from "./constants.js";
+import { resolveBaseAddress, type HipcallRegion } from "./constants.js";
 import {
   BadRequestException,
   EXCEPTION_MAP,
@@ -98,6 +98,9 @@ import type {
 
 export interface HipcallClientOptions {
   apiKey: string;
+  /** "global" (default) = https://use.hipcall.com, "tr" = https://use.hipcall.com.tr */
+  region?: HipcallRegion;
+  /** Overrides the region address when set. */
   baseUrl?: string;
   fetch?: typeof fetch;
 }
@@ -119,14 +122,14 @@ export class HipcallBaseClient {
         throw new Error("API key must be provided.");
       }
       this.apiKey = apiKeyOrOptions.apiKey;
-      this.baseUrl = (apiKeyOrOptions.baseUrl || DEFAULT_HIPCALL_BASE_ADDRESS).replace(/\/+$/, "");
+      this.baseUrl = resolveBaseAddress(apiKeyOrOptions.baseUrl, apiKeyOrOptions.region);
       this.fetchFn = apiKeyOrOptions.fetch ?? globalThis.fetch.bind(globalThis);
     } else {
       if (!apiKeyOrOptions) {
         throw new Error("API key must be provided.");
       }
       this.apiKey = apiKeyOrOptions;
-      this.baseUrl = (baseUrl || DEFAULT_HIPCALL_BASE_ADDRESS).replace(/\/+$/, "");
+      this.baseUrl = resolveBaseAddress(baseUrl);
       this.fetchFn = customFetch ?? globalThis.fetch.bind(globalThis);
     }
     this.api_key = this.apiKey;
