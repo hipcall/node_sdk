@@ -1,0 +1,54 @@
+{
+  "name": "@hipcall/sdk",
+  "version": "1.0.0",
+  "description": "Official Hipcall REST API Wrapper written in TypeScript for Node.js",
+  "license": "MIT",
+  "author": "Hipcall <dev@hipcall.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hipcall/node_sdk.git"
+  },
+  "bugs": {
+    "url": "https://github.com/hipcall/node_sdk/issues"
+  },
+  "homepage": "https://github.com/hipcall/node_sdk#readme",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "README_TR.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "hipcall",
+    "sdk",
+    "api",
+    "voip",
+    "cloud-pbx",
+    "call-center",
+    "telephony",
+    "crm"
+  ],
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc --noEmit",
+    "test": "npm run build && node --test tests/endpoints.test.mjs",
+    "prepublishOnly": "npm run build"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.3"
+  }
+}
