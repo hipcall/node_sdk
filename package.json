@@ -1,6 +1,6 @@
 {
   "name": "@hipcall/sdk",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Official Hipcall REST API Wrapper written in TypeScript for Node.js",
   "license": "MIT",
   "author": "Hipcall <dev@hipcall.com>",

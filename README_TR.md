@@ -2,7 +2,7 @@
 
 > **Dil / Language:** [English (`README.md`)](./README.md) | **Türkçe**
 
-Hipcall REST API v3 için TypeScript ve Node.js ile geliştirilmiş resmi SDK kütüphanesi.
+[Hipcall](https://www.hipcall.com.tr) REST API v3 için TypeScript ve Node.js ile geliştirilmiş resmi SDK kütüphanesi.
 
 > Tarayıcı üzerinden WebRTC ve SIP ile sesli telefon görüşmesi yapmak için [**Hipcall WebRTC SDK (`@hipcall/webrtc-sdk`)**](https://github.com/hipcall/node_webrtc_sdk) deposuna göz atın.
 
@@ -124,6 +124,15 @@ npm run build
 npm test
 ```
 
+## Dokümantasyon ve Kaynaklar
+
+- [Hipcall Geliştirici Portalı](https://developers.hipcall.com.tr/) — Resmi rehberler, API referansları ve entegrasyon dokümantasyonu.
+- [Hipcall](https://www.hipcall.com.tr) — Bulut santral, çağrı merkezi ve CRM platformu.
+
 ## Lisans
 
 [MIT](./LICENSE)
+
+---
+
+Developed by [Hipcall](https://www.hipcall.com.tr)

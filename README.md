@@ -2,7 +2,7 @@
 
 > **Language / Dil:** **English** | [Türkçe (`README_TR.md`)](./README_TR.md)
 
-Official Hipcall REST API Wrapper written in TypeScript for Node.js.
+Official [Hipcall](https://www.hipcall.com) REST API Wrapper written in TypeScript for Node.js.
 
 > Looking for the browser WebRTC & SIP softphone SDK? See [**Hipcall WebRTC SDK (`@hipcall/webrtc-sdk`)**](https://github.com/hipcall/node_webrtc_sdk).
 
@@ -132,6 +132,15 @@ npm test
 - [HipcallRubySdk](https://github.com/hipcall/ruby-sdk) - Official Hipcall API Wrapper written in Ruby.
 - [HipcallSdk](https://github.com/hipcall/elixir_sdk) - Official Hipcall API Wrapper written in Elixir.
 
+## Documentation & Resources
+
+- [Hipcall Developer Portal](https://developers.hipcall.com/) — Official guides, API references, and tutorials.
+- [Hipcall](https://www.hipcall.com) — Cloud phone system, contact centre, and CRM platform.
+
 ## License
 
 [MIT](./LICENSE)
+
+---
+
+Developed by [Hipcall](https://www.hipcall.com)
